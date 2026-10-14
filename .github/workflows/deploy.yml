@@ -1,0 +1,54 @@
+name: Deploy to arushhh.com
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  id-token: write   # lets GitHub sign in to AWS with a short-lived token (no stored keys)
+  contents: read
+
+concurrency:
+  group: deploy
+  cancel-in-progress: false
+
+env:
+  AWS_REGION: ap-south-1
+  AMPLIFY_APP_ID: d2v4d02m77kv7a
+  AMPLIFY_BRANCH: main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: ${{ vars.AWS_ROLE_ARN }}
+          aws-region: ${{ env.AWS_REGION }}
+
+      - name: Package site
+        run: zip -qr site.zip . -x '.git/*' '.github/*' '.gitignore' 'README*' 'site.zip'
+
+      - name: Upload and deploy
+        run: |
+          set -euo pipefail
+          read -r JOB_ID UPLOAD_URL < <(aws amplify create-deployment \
+            --app-id "$AMPLIFY_APP_ID" --branch-name "$AMPLIFY_BRANCH" \
+            --query '[jobId, zipUploadUrl]' --output text)
+          curl -sSf -T site.zip "$UPLOAD_URL"
+          aws amplify start-deployment --app-id "$AMPLIFY_APP_ID" --branch-name "$AMPLIFY_BRANCH" --job-id "$JOB_ID" > /dev/null
+          for i in $(seq 1 60); do
+            STATUS=$(aws amplify get-job --app-id "$AMPLIFY_APP_ID" --branch-name "$AMPLIFY_BRANCH" --job-id "$JOB_ID" \
+              --query 'job.summary.status' --output text)
+            echo "Deployment $JOB_ID: $STATUS"
+            case "$STATUS" in
+              SUCCEED) exit 0 ;;
+              FAILED|CANCELLED) exit 1 ;;
+            esac
+            sleep 5
+          done
+          echo "Timed out waiting for deployment"; exit 1
