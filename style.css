@@ -170,7 +170,7 @@ h2{font-size:clamp(32px,4.2vw,52px);line-height:1;letter-spacing:-.035em;padding
 
 /* timeline */
 .tl{list-style:none;margin:8px 0 0;padding:0}
-.tl .row{position:relative;isolation:isolate;display:grid;grid-template-columns:150px 56px minmax(0,1fr);gap:0 18px;padding:24px 0;border-bottom:1px solid var(--line);transition:opacity .25s var(--ease)}
+.tl .row{position:relative;isolation:isolate;display:grid;grid-template-columns:150px 40px minmax(0,1fr);gap:0 18px;padding:24px 0;border-bottom:1px solid var(--line);transition:opacity .25s var(--ease)}
 .tl .row::before{content:"";position:absolute;z-index:-1;inset:0 -16px;border-radius:12px;background:var(--tile);opacity:0;transition:opacity .3s var(--ease)}
 .tl .row::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:1px;background:var(--accent-deep);transform:scaleX(0);transform-origin:left;transition:transform .5s var(--ease)}
 .tl .when{padding-top:5px}
@@ -182,7 +182,11 @@ h2{font-size:clamp(32px,4.2vw,52px);line-height:1;letter-spacing:-.035em;padding
 .dot{position:relative;z-index:1;display:block;width:10px;height:10px;margin-top:8px;border-radius:50%;background:var(--paper);box-shadow:inset 0 0 0 2px var(--line);transition:box-shadow .25s}
 .dot.on{box-shadow:inset 0 0 0 5px var(--accent-deep)}
 .tl .row:hover .dot{box-shadow:inset 0 0 0 5px var(--accent-deep)}
-.tl h3{font-size:20px;letter-spacing:-.02em;display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 12px}
+.tl h3{font-size:20px;letter-spacing:-.02em;display:flex;flex-wrap:wrap;align-items:center;gap:6px 14px}
+.org-logo{height:30px;width:auto;opacity:.9;transition:opacity .25s}
+.org-logo.ibm{height:24px}
+.org-logo.crest{height:46px}
+.tl .row:hover .org-logo{opacity:1}
 .org{font:400 13px/1 var(--mono);color:var(--faint);text-decoration:none;transition:color .2s}
 .org:hover{color:var(--accent-deep)}
 .tl .body p{margin-top:8px;font:400 16px/1.55 var(--serif);color:var(--muted);max-width:70ch}
@@ -244,9 +248,9 @@ a.card:hover h3::after{color:var(--accent-deep);translate:2px -2px}
 .skills dd{margin:0;color:var(--muted)}
 
 /* gallery */
-.gallery{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:20px}
+.gallery{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:20px;align-items:start}
 .shot{margin:0;border-radius:12px;overflow:hidden;background:var(--tile);box-shadow:inset 0 0 0 1px var(--hair)}
-.shot img{width:100%;aspect-ratio:3/2;object-fit:cover;transition:scale .8s var(--ease)}
+.shot img{width:100%;height:auto;transition:scale .8s var(--ease)}
 .shot:hover img{scale:1.03}
 .shot figcaption{padding:12px 14px 14px;font:400 14px/1.5 var(--sans);color:var(--muted)}
 
@@ -279,7 +283,7 @@ a.card:hover h3::after{color:var(--accent-deep);translate:2px -2px}
   .hl{flex:1 1 calc(33% - 12px);min-height:260px}
   .paper-head{grid-template-columns:160px minmax(0,1fr) 16px}
   .more-grid{padding-left:0;grid-template-columns:1fr}
-  .tl .row{grid-template-columns:110px 44px minmax(0,1fr)}
+  .tl .row{grid-template-columns:110px 36px minmax(0,1fr)}
   .rows .row{grid-template-columns:minmax(0,1fr) auto;row-gap:4px}
   .rows .row p{grid-column:1/-1}
 }
@@ -305,6 +309,7 @@ a.card:hover h3::after{color:var(--accent-deep);translate:2px -2px}
   .card{min-height:0}
   .tl .row{grid-template-columns:minmax(0,1fr);gap:4px}
   .tl .spine{display:none}
+  .org-logo{height:24px}.org-logo.ibm{height:20px}.org-logo.crest{height:38px}
   .tl .when{padding-top:0}
   .edu{grid-template-columns:72px 1fr;gap:16px;padding:16px}
   .edu-crest{height:72px}

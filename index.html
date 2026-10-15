@@ -25,7 +25,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=8">
+  <link rel="stylesheet" href="style.css?v=9">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -222,9 +222,9 @@
     <ol class="tl">
       <li class="row">
         <span class="when">Aug 2026 – now</span>
-        <span class="spine"><img src="assets/logos/conscious-engines-dark.svg" alt="" width="708" height="192"></span>
+        <span class="spine"><i class="dot on" aria-hidden="true"></i></span>
         <div class="body">
-          <h3>Conscious Engines <a class="org" href="https://consciousengines.com" target="_blank" rel="noopener">consciousengines.com ↗</a></h3>
+          <h3><img class="org-logo" src="assets/logos/conscious-engines-dark.svg" alt="" width="708" height="192">Conscious Engines <a class="org" href="https://consciousengines.com" target="_blank" rel="noopener">consciousengines.com ↗</a></h3>
           <p class="role">Research Engineer Intern · Stackr Labs, backed by a16z</p>
           <p>Draft-aligned decoding for SDAR-30B-A3B, a 30B-parameter diffusion mixture-of-experts LM. A 1.7B drafter pre-fills each 32-token block and a self-distilled LoRA judge accepts or re-masks each token. Against the 30B model's own block decoding, large-model passes fall from 12.8 to 7.6 per block (1.68×) and throughput rises 1.35× at comparable accuracy; the gap is drafter and judge overhead.</p>
           <p>Also training FLARE-2B, a Qwen3.5-2B model converted to diffusion decoding, through 9.66B tokens on 8×H200 with resumable checkpoints. Code is internal; I am glad to walk through the method and the ablations.</p>
@@ -233,9 +233,9 @@
       </li>
       <li class="row">
         <span class="when">May – Aug 2026</span>
-        <span class="spine"><img src="assets/logos/ibm-dark.svg" alt="" width="1075" height="401"></span>
+        <span class="spine"><i class="dot" aria-hidden="true"></i></span>
         <div class="body">
-          <h3>IBM Research India <a class="org" href="https://research.ibm.com/labs/india" target="_blank" rel="noopener">research.ibm.com ↗</a></h3>
+          <h3><img class="org-logo ibm" src="assets/logos/ibm.svg" alt="" width="1075" height="401">IBM Research India <a class="org" href="https://research.ibm.com/labs/india" target="_blank" rel="noopener">research.ibm.com ↗</a></h3>
           <p class="role">Research Intern, AI for Quantum · with Dr. Anupama Ray</p>
           <p>Built a multi-agent loop in which model agents proposed, mutated, critiqued and evaluated analytic QAOA schedules; used the best schedule in sign-hedged beam RQAOA and evaluated it on simulators, MPS and IBM hardware. The work won the <a href="#paper-qaoa">Best Paper Award</a> at the internship symposium.</p>
           <p class="pills"><span>QAOA</span><span>beam search</span><span>agentic search</span><span>IBM Quantum</span></p>
@@ -243,9 +243,9 @@
       </li>
       <li class="row">
         <span class="when">Jun 2025 – now</span>
-        <span class="spine"><img class="crest" src="assets/logos/iit-ism.png" alt="" width="140" height="160"></span>
+        <span class="spine"><i class="dot" aria-hidden="true"></i></span>
         <div class="body">
-          <h3>IIT (ISM) Dhanbad</h3>
+          <h3><img class="org-logo crest" src="assets/logos/iit-ism.png" alt="" width="140" height="160">IIT (ISM) Dhanbad</h3>
           <p class="role">Research Intern · with Dr. Soumen Basu (Meta) and Dr. Manoj Kumar (IIT Roorkee)</p>
           <p>Uncertainty-aware self-supervised learning for medical images and graph models of brain networks. First author on <a href="#paper-pacl">PACL</a>, second author on <a href="#paper-brainrma">BrainRMA</a>.</p>
           <p class="pills"><span>self-supervised learning</span><span>ViT</span><span>graph models</span></p>
@@ -351,7 +351,7 @@
     <h2>Photos</h2>
     <div class="gallery">
       <figure class="shot" data-lens>
-        <img src="assets/ibm-best-paper.jpg" alt="Receiving the Best Paper certificate at the IBM Research Internship Symposium" width="900" height="672" loading="lazy">
+        <img src="assets/ibm-best-paper.jpg" alt="Receiving the Best Paper certificate at the IBM Research Internship Symposium" width="1400" height="1055" loading="lazy">
         <figcaption>Receiving the Best Paper certificate, IBM Research India, 6 August 2026.</figcaption>
       </figure>
       <figure class="shot" data-lens>
@@ -381,6 +381,6 @@
   <p class="note">The line in the first screen is a draft-and-verify loop: a small drafter proposes a block of tokens, a judge accepts the ones it trusts and re-masks the rest. Move the cursor across it, or use the slider, to change the block size and watch the large-model calls saved. Site built by hand; design notes in <a href="DESIGN.md">DESIGN.md</a>.</p>
 </footer>
 
-<script src="main.js?v=8" defer></script>
+<script src="main.js?v=9" defer></script>
 </body>
 </html>
