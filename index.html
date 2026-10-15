@@ -6,7 +6,7 @@
   <title>Arush Sharma</title>
   <meta name="description" content="Arush Sharma: final-year ECE undergraduate at IIT (ISM) Dhanbad and research engineer intern at Conscious Engines, working on faster decoding for large language models. Previously research intern at IBM Research India (Best Paper Award).">
   <meta name="author" content="Arush Sharma">
-  <meta name="theme-color" content="#f4f4f3">
+  <meta name="theme-color" content="#f5f0e6">
   <link rel="canonical" href="https://arushhh.com/">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://arushhh.com/">
@@ -23,7 +23,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=5">
+  <link rel="stylesheet" href="style.css?v=6">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -48,6 +48,7 @@
 <div class="page">
   <header class="site-header">
     <a class="site-title" href="/">Arush Sharma</a>
+    <span class="pull">Making language models faster, and checking that they really are.</span>
     <nav class="site-nav">
       <a href="#papers">Papers</a>
       <a href="#experience">Experience</a>
@@ -57,21 +58,29 @@
     </nav>
   </header>
 
+  <figure class="band">
+    <picture>
+      <source media="(max-width: 720px)" srcset="assets/ibm-team-mobile.jpg">
+      <img src="assets/ibm-team-wide.jpg" alt="Arush with colleagues at IBM Research India, standing in front of blue quantum-chip blueprint panels" width="1096" height="462" fetchpriority="high">
+    </picture>
+    <figcaption>With colleagues and fellow interns at IBM Research India, summer 2026. I’m in the beige sweater.</figcaption>
+  </figure>
+
   <main>
     <section class="intro">
       <img class="portrait" src="assets/profile.jpg" alt="Arush Sharma" width="600" height="600">
       <div class="bio">
-        <p>I am a final-year undergraduate at IIT (ISM) Dhanbad and a Research Engineer Intern at <a href="https://consciousengines.com">Conscious Engines</a>. I build and measure faster inference for large language models: draft-and-verify decoding for diffusion models, KV-cache management, and the evaluation that shows whether a speedup is real.</p>
-        <p>In summer 2026 I was a research intern in the AI for Quantum group at <a href="https://research.ibm.com/labs/india">IBM Research India</a> with Dr. Anupama Ray; my work there won the Best Paper Award at the IBM Research Internship Symposium 2026. With Dr. Soumen Basu (Meta) and Dr. Manoj Kumar (IIT Roorkee) I work on uncertainty-aware representation learning for medical images and brain networks, with two papers under review.</p>
-        <p>I graduate in April 2027 and am looking for research engineering roles in inference efficiency, decoding and post-training, starting mid-2027, and for internships before then. I am based in New Delhi.</p>
-        <p class="links"><a href="mailto:arushsharma536@gmail.com">Email</a> / <a href="assets/Arush_Sharma_CV.pdf" target="_blank" rel="noopener">CV</a> / <a href="https://github.com/Arush777">GitHub</a> / <a href="https://www.linkedin.com/in/arush-sharma-44a796288">LinkedIn</a> / <a href="https://huggingface.co/Arushhh">Hugging Face</a> / <a href="https://x.com/Arushhh_Sharma">X</a></p>
+        <p>I’m Arush, a final-year undergraduate at IIT (ISM) Dhanbad and a Research Engineer Intern at <a href="https://consciousengines.com">Conscious Engines</a>. I build faster inference for large language models and then try hard to prove the speedup is real: draft-and-verify decoding for diffusion models, KV-cache management, and the evaluation behind the numbers.</p>
+        <p>In summer 2026 I was in the AI for Quantum group at <a href="https://research.ibm.com/labs/india">IBM Research India</a> with Dr. Anupama Ray, and our paper won the Best Paper Award at the IBM Research Internship Symposium 2026. Alongside that, I work with Dr. Soumen Basu (Meta) and Dr. Manoj Kumar (IIT Roorkee) on uncertainty-aware learning for medical images and brain networks; two papers are under review.</p>
+        <p class="ask">I graduate in April 2027. If you are hiring research engineers for inference efficiency, decoding or post-training from mid-2027, or have an internship before then, I would like to hear from you. I’m based in New Delhi.</p>
+        <p class="links"><a href="mailto:arushsharma536@gmail.com">Write to me</a> · <a href="assets/Arush_Sharma_CV.pdf" target="_blank" rel="noopener">CV</a> · <a href="https://github.com/Arush777">GitHub</a> · <a href="https://www.linkedin.com/in/arush-sharma-44a796288">LinkedIn</a> · <a href="https://huggingface.co/Arushhh">Hugging Face</a> · <a href="https://x.com/Arushhh_Sharma">X</a></p>
       </div>
     </section>
 
     <section id="papers">
       <h2>Papers</h2>
       <div class="paper">
-        <a class="thumb" href="assets/ibm-best-paper-award.jpg"><img src="assets/fig-qaoa.jpg" alt="Hardware approximation ratio on IBM Marrakesh: sign-hedged beam reaches 1.00 on SK and portfolio instances" width="840" height="456" loading="lazy"></a>
+        <span class="thumb"><img src="assets/fig-qaoa.jpg" alt="Hardware approximation ratio on IBM Marrakesh: sign-hedged beam reaches 1.00 on SK and portfolio instances" width="840" height="456" loading="lazy"></span>
         <div>
           <span class="title">Sign-hedged Beam QAOA: Scaling Quantum Optimization Algorithms</span>
           <p class="authors"><b>Arush Sharma</b>, Anupama Ray.</p>
@@ -102,9 +111,9 @@
     <section id="experience">
       <h2>Experience</h2>
       <table class="dated">
-        <tr><td>Aug 2026 – present</td><td><img class="org" src="assets/logos/conscious-engines.svg" alt="" width="708" height="192"><b>Research Engineer Intern</b>, Conscious Engines (Stackr Labs).<span class="desc">Draft-aligned decoding for SDAR-30B-A3B, a 30B-parameter diffusion language model: a 1.7B drafter fills in each 32-token block and a small self-distilled LoRA judge accepts or re-masks each token. Against the 30B model’s own block decoding, passes through the large model fall from 12.8 to 7.6 per block (1.68×) and throughput rises 1.35× tokens/s at comparable accuracy across benchmarks; the gap is drafter and judge overhead. Also training FLARE-2B, a Qwen3.5-2B model converted to diffusion decoding, through 9.66B tokens on 8×H200. Code is internal to Conscious Engines; I am glad to walk through the method and ablations.</span></td></tr>
+        <tr><td>Aug 2026 – present</td><td><img class="org" src="assets/logos/conscious-engines.svg" alt="" width="708" height="192"><b>Research Engineer Intern</b>, Conscious Engines (Stackr Labs).<span class="desc">Draft-aligned decoding for SDAR-30B-A3B, a 30B-parameter diffusion language model: a 1.7B drafter fills in each 32-token block and a small self-distilled LoRA judge accepts or re-masks each token. Against the 30B model’s own block decoding, passes through the large model fall from 12.8 to 7.6 per block (1.68×) and throughput rises 1.35× tokens/s at comparable accuracy across benchmarks; the gap is drafter and judge overhead. Also training FLARE-2B, a Qwen3.5-2B model converted to diffusion decoding, through 9.66B tokens on 8×H200. The code is internal to Conscious Engines, but I’m happy to walk you through the method and the ablations.</span></td></tr>
         <tr><td>May – Aug 2026</td><td><img class="org" src="assets/logos/ibm.svg" alt="" width="1000" height="400"><b>Research Intern, AI for Quantum</b>, IBM Research India, with Dr. Anupama Ray.<span class="desc">Built a multi-agent loop in which model agents proposed, mutated, critiqued and evaluated analytic QAOA schedules; used the best schedule in sign-hedged beam RQAOA and evaluated it on simulators, MPS and IBM hardware.</span></td></tr>
-        <tr><td>Jun 2025 – present</td><td><img class="org crest" src="assets/logos/iit-ism.png" alt="" width="140" height="160"><b>Research Intern</b>, IIT (ISM) Dhanbad, with Dr. Soumen Basu (Meta) and Dr. Manoj Kumar (IIT Roorkee).<span class="desc">First author on PACL (medical-image self-supervised learning) and second author on BrainRMA (brain-network models).</span></td></tr>
+        <tr><td>Jun 2025 – present</td><td><b>Research Intern</b>, IIT (ISM) Dhanbad, with Dr. Soumen Basu (Meta) and Dr. Manoj Kumar (IIT Roorkee).<span class="desc">First author on PACL (medical-image self-supervised learning) and second author on BrainRMA (brain-network models).</span></td></tr>
         <tr><td>Jun – Nov 2025</td><td><b>Agentic AI Intern</b>, Aeroqube.<span class="desc">Fine-tuned MedGemma 4B for a medical-tourism assistant and deployed it as a Dockerized AWS pipeline with retrieval-augmented generation and LangSmith evaluation.</span></td></tr>
       </table>
     </section>
@@ -135,7 +144,12 @@
     <section id="awards">
       <h2>Awards</h2>
       <table class="dated">
-        <tr><td>2026</td><td>Best Paper Award, IBM Research Internship Symposium. <a href="assets/ibm-best-paper-award.jpg">[certificate]</a></td></tr>
+        <tr><td>2026</td><td>
+          <figure class="fig award">
+            <a href="assets/ibm-best-paper.jpg"><img src="assets/ibm-award-crop.jpg" alt="Receiving the Best Paper certificate at the IBM Research Internship Symposium" width="800" height="600" loading="lazy"></a>
+            <figcaption>Receiving the Best Paper certificate, 6 August 2026.</figcaption>
+          </figure>
+          Best Paper Award, IBM Research Internship Symposium. <a href="assets/ibm-best-paper-award.jpg">[certificate]</a></td></tr>
         <tr><td>2026</td><td>5th of 80,000 teams on the public leaderboard, Amazon ML Challenge.</td></tr>
         <tr><td>2025</td><td>12th of 23 IITs, Inter IIT Tech Meet 14.0 (Arista Intelligent RRM).</td></tr>
         <tr><td></td><td>2nd prize, Hackfest (AtomMail). Selected for Amazon ML Summer School (top 3,000 of 134,000 applicants).</td></tr>
@@ -151,22 +165,9 @@
       </table>
     </section>
 
-    <section id="photos">
-      <h2>Photos</h2>
-      <div class="photos">
-        <figure>
-          <img src="assets/ibm-best-paper.jpg" alt="Receiving the Best Paper Award at the IBM Research Internship Symposium 2026" width="900" height="672" loading="lazy">
-          <figcaption>Best Paper Award, IBM Research Internship Symposium, Aug 2026.</figcaption>
-        </figure>
-        <figure>
-          <img src="assets/ibm-team.jpg" alt="With colleagues at IBM Research India" width="900" height="475" loading="lazy">
-          <figcaption>With colleagues at IBM Research India, summer 2026.</figcaption>
-        </figure>
-      </div>
-    </section>
   </main>
 
-  <footer>Arush Sharma · <a href="mailto:arushsharma536@gmail.com">arushsharma536@gmail.com</a> · Last updated October 2026</footer>
+  <footer>Arush Sharma, New Delhi · <a href="mailto:arushsharma536@gmail.com">arushsharma536@gmail.com</a> · Updated October 2026</footer>
 </div>
 </body>
 </html>
