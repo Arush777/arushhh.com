@@ -47,7 +47,7 @@
 
   // Gentle reveal on scroll
   if (!reduceMotion && 'IntersectionObserver' in window) {
-    var targets = document.querySelectorAll('.job, .paper, .card, .more li');
+    var targets = document.querySelectorAll('.news li, .job, .paper, .card, .more li');
     var revealObs = new IntersectionObserver(function (entries) {
       entries.forEach(function (e) {
         if (e.isIntersecting) { e.target.classList.add('in'); revealObs.unobserve(e.target); }
@@ -100,7 +100,7 @@
     later(cycle, t);
   }
 
-  // Only animate while the card is on screen
+  // Only animate while the figure is on screen
   var running = false;
   if ('IntersectionObserver' in window) {
     new IntersectionObserver(function (entries) {
