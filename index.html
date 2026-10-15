@@ -18,7 +18,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css?v=3">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -40,6 +40,7 @@
   </script>
 </head>
 <body>
+<div class="page">
   <header class="site-header">
     <a class="site-title" href="/">Arush Sharma</a>
     <nav class="site-nav">
@@ -82,7 +83,8 @@
         <div>
           <a class="title" href="https://drive.google.com/file/d/1jNedlV9ppGXWFA6LxkRDaOdzEUBZ3yLQ/view">From Points to Distributions: Probabilistic Latent Autoregression for Medical Image Representation Learning</a>
           <p><b>Arush Sharma</b>, Soumen Basu, Manoj Kumar.</p>
-          <p>Under review at WACV 2027. Predicts a Gaussian latent per patch instead of a point embedding and carries the uncertainty into classification and segmentation. 0.987 AUROC on chest X-ray, 0.938 on BUSI, 0.604 IoU.</p>
+          <p class="venue">Under review at WACV 2027.</p>
+          <p>Predicts a Gaussian latent per patch instead of a point embedding and carries the uncertainty into classification and segmentation. 0.987 AUROC on chest X-ray, 0.938 on BUSI, 0.604 IoU.</p>
         </div>
       </div>
       <div class="paper">
@@ -90,7 +92,8 @@
         <div>
           <a class="title" href="https://drive.google.com/file/d/1lcJsUY2lFRIX_n2xGATo4vR3LO4hkE2X/view">BrainRMA: ROI-Preserving Multiscale Attention for Brain Network Analysis</a>
           <p>Second author, with Soumen Basu and Manoj Kumar.</p>
-          <p>Under review at AAAI 2027. Keeps ROI tokens while fusing global attention with reliability-weighted ROI-to-cluster context. 82.35% on ABIDE and 93.75% on OSF.</p>
+          <p class="venue">Under review at AAAI 2027.</p>
+          <p>Keeps ROI tokens while fusing global attention with reliability-weighted ROI-to-cluster context. 82.35% on ABIDE and 93.75% on OSF.</p>
         </div>
       </div>
       <div class="paper">
@@ -98,7 +101,8 @@
         <div>
           <span class="title">Sign-hedged Beam QAOA: Scaling Quantum Optimization Algorithms</span>
           <p><b>Arush Sharma</b>, Anupama Ray.</p>
-          <p>In preparation. Best Paper Award, IBM Research Internship Symposium 2026. Pairs a CliffSearch-evolved power-law schedule with width-<i>B</i> sign hedging so recursive QAOA avoids irreversible correlator-sign errors; approximation ratio 1.000 on IBM Marrakesh for SK (n=20), 0.984 on MaxCut (n=60).</p>
+          <p class="venue">In preparation. Best Paper Award, IBM Research Internship Symposium 2026.</p>
+          <p>Pairs a CliffSearch-evolved power-law schedule with width-<i>B</i> sign hedging so recursive QAOA avoids irreversible correlator-sign errors; approximation ratio 1.000 on IBM Marrakesh for SK (n=20), 0.984 on MaxCut (n=60).</p>
         </div>
       </div>
     </section>
@@ -106,24 +110,24 @@
     <section id="experience">
       <h2>Experience</h2>
       <table class="dated">
-        <tr><td>2026 Aug –</td><td><b>Conscious Engines</b> (Stackr Labs, backed by a16z), research engineer intern. Draft-aligned decoding for SDAR-30B-A3B: a 1.7B drafter pre-fills each 32-token block and a self-distilled LoRA judge commits or re-masks each token, cutting MoE passes per block from 12.8 to 7.6 at comparable accuracy. Scaling FLARE-2B training to 9.66B tokens on 8×H200.</td></tr>
+        <tr><td>2026 Aug – now</td><td><b>Conscious Engines</b> (Stackr Labs, backed by a16z), research engineer intern. Draft-aligned decoding for SDAR-30B-A3B: a 1.7B drafter pre-fills each 32-token block and a self-distilled LoRA judge commits or re-masks each token, cutting MoE passes per block from 12.8 to 7.6 at comparable accuracy. Scaling FLARE-2B training to 9.66B tokens on 8×H200.</td></tr>
         <tr><td>2026 May – Aug</td><td><b>IBM Research India</b>, research intern, AI for Quantum, with Anupama Ray. A multi-agent algorithm-discovery loop that proposes, mutates and evaluates analytic QAOA schedules; sign-hedged beam RQAOA evaluated on simulators, MPS and IBM hardware.</td></tr>
-        <tr><td>2025 Jun –</td><td><b>IIT (ISM) Dhanbad</b>, research intern with Soumen Basu (Meta) and Manoj Kumar (IIT Roorkee). Medical-imaging self-supervised learning and brain-network models.</td></tr>
+        <tr><td>2025 Jun – now</td><td><b>IIT (ISM) Dhanbad</b>, research intern with Soumen Basu (Meta) and Manoj Kumar (IIT Roorkee). Medical-imaging self-supervised learning and brain-network models.</td></tr>
         <tr><td>2025 Jun – Nov</td><td><b>Aeroqube</b>, agentic AI intern. Fine-tuned MedGemma 4B for a medical-tourism assistant and deployed a Dockerised AWS pipeline with retrieval and LangSmith evaluation.</td></tr>
       </table>
     </section>
 
     <section id="projects">
       <h2>Projects</h2>
-      <table class="dated">
-        <tr><td>2026</td><td><b>PriorityKV</b>: structure-aware KV-cache eviction for long agent traces. Protects system, tool-schema, constraint, sink and recent tokens; retained task state in 112/120 cases versus 1/120 for position-blind eviction on Qwen3-8B and Llama-3.1-8B. <a href="https://github.com/Arush777/Priority_KV">(code)</a></td></tr>
-        <tr><td>2026</td><td><b>Business entity resolution</b>, AMLC 2026: a cost-tiered matching cascade over 1.7M entities, from a fine-tuned multilingual-e5 blocker through cross-encoders and LightGBM to an ensemble of Qwen3.5-4B LoRA judges. Rank 5 of 80,000 teams. <a href="https://github.com/NoviceCoderInfinity/clauders">(code)</a></td></tr>
-        <tr><td>2026</td><td><b>AlignmentLab</b>: matched-compute comparison of SFT, DPO and GRPO/RLVR on Qwen3-8B and 14B. <a href="https://github.com/Arush777/AlignmentLab">(code)</a></td></tr>
-        <tr><td>2026</td><td><b>Hindi TinyStories GPT</b>: a 33M-parameter decoder-only transformer written from scratch in PyTorch and trained on 100M tokens of Hindi children’s stories. <a href="https://github.com/Arush777/hindi-tinystories-gpt">(code)</a></td></tr>
-        <tr><td>2025</td><td><b>ReVival</b>, Amazon HackOn Season 6: a seven-agent pipeline on AWS Bedrock that grades returned products from photos and routes them back to market. <a href="https://github.com/Arush777/ReVival">(code)</a> <a href="https://revival-rose.vercel.app">(demo)</a></td></tr>
-        <tr><td>2025</td><td><b>Arista Intelligent RRM</b>, Inter IIT Tech Meet 14.0: radio-resource management with a GNN state encoder and offline conservative Q-learning on Linux virtual APs. 12th of 23 IITs. <a href="https://github.com/HappySaxena/Arista_High_Prep_InterIIT_14.0">(code)</a></td></tr>
-        <tr><td>2025</td><td><b>AtomMail</b>: an OCR-grounded email assistant that drafts replies in the user’s tone. 2nd prize, Hackfest. <a href="https://github.com/Arush777/my-hackfest-atom-mail">(code)</a></td></tr>
-      </table>
+      <ul class="plain">
+        <li><b>PriorityKV</b>: structure-aware KV-cache eviction for long agent traces. Protects system, tool-schema, constraint, sink and recent tokens; retained task state in 112/120 cases versus 1/120 for position-blind eviction on Qwen3-8B and Llama-3.1-8B. <a href="https://github.com/Arush777/Priority_KV">(code)</a></li>
+        <li><b>Business entity resolution</b>, AMLC 2026: a cost-tiered matching cascade over 1.7M entities, from a fine-tuned multilingual-e5 blocker through cross-encoders and LightGBM to an ensemble of Qwen3.5-4B LoRA judges. Rank 5 of 80,000 teams. <a href="https://github.com/NoviceCoderInfinity/clauders">(code)</a></li>
+        <li><b>AlignmentLab</b>: matched-compute comparison of SFT, DPO and GRPO/RLVR on Qwen3-8B and 14B. <a href="https://github.com/Arush777/AlignmentLab">(code)</a></li>
+        <li><b>Hindi TinyStories GPT</b>: a 33M-parameter decoder-only transformer written from scratch in PyTorch and trained on 100M tokens of Hindi children’s stories. <a href="https://github.com/Arush777/hindi-tinystories-gpt">(code)</a></li>
+        <li><b>ReVival</b>, Amazon HackOn Season 6: a seven-agent pipeline on AWS Bedrock that grades returned products from photos and routes them back to market. <a href="https://github.com/Arush777/ReVival">(code)</a> <a href="https://revival-rose.vercel.app">(demo)</a></li>
+        <li><b>Arista Intelligent RRM</b>, Inter IIT Tech Meet 14.0: radio-resource management with a GNN state encoder and offline conservative Q-learning on Linux virtual APs. 12th of 23 IITs. <a href="https://github.com/HappySaxena/Arista_High_Prep_InterIIT_14.0">(code)</a></li>
+        <li><b>AtomMail</b>: an OCR-grounded email assistant that drafts replies in the user’s tone. 2nd prize, Hackfest. <a href="https://github.com/Arush777/my-hackfest-atom-mail">(code)</a></li>
+      </ul>
     </section>
 
     <section id="awards">
@@ -151,5 +155,6 @@
       </div>
     </section>
   </main>
+</div>
 </body>
 </html>
